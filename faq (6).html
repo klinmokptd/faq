@@ -20,29 +20,32 @@
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
         
         header {
             background: linear-gradient(135deg, #1e88e5, #0d47a1);
             color: white;
-            padding: 30px 20px;
+            padding: 40px 30px;
             text-align: center;
         }
         
         h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
         
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .faq-container {
@@ -50,55 +53,49 @@
         }
         
         .faq-item {
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #eaeaea;
         }
         
         .faq-question {
-            padding: 20px;
+            padding: 24px 30px;
             background: white;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background 0.3s;
+            transition: all 0.3s;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
         
         .faq-question:hover {
-            background: #f8f9fa;
+            background: #f8fafd;
+            padding-left: 35px;
         }
         
         .faq-question::after {
             content: '+';
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #1e88e5;
             transition: transform 0.3s;
         }
         
-        .faq-item.active .faq-question::after {
-            content: '−';
-        }
-        
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s;
-            background: #fafafa;
-        }
-        
-        .faq-item.active .faq-answer {
-            padding: 20px;
-            max-height: 2000px;
+        .no-results {
+            padding: 60px 30px;
+            text-align: center;
+            color: #757575;
+            display: none;
+            font-size: 1.1rem;
         }
         
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             color: #757575;
-            font-size: 0.9rem;
-            border-top: 1px solid #e0e0e0;
-            background: #f9f9f9;
+            font-size: 0.95rem;
+            border-top: 1px solid #eaeaea;
+            background: #fcfcfc;
         }
         
         /* Модальное окно */
@@ -109,7 +106,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             z-index: 1000;
             animation: fadeIn 0.3s ease;
         }
@@ -119,22 +116,22 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 90%;
-            max-width: 900px;
-            height: 90%;
-            max-height: 800px;
+            width: 95%;
+            max-width: 1000px;
+            height: 90vh;
+            max-height: 900px;
             background: white;
-            border-radius: 15px;
+            border-radius: 16px;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
         
         .modal-header {
-            padding: 25px 30px;
+            padding: 28px 35px;
             background: linear-gradient(135deg, #1e88e5, #0d47a1);
             color: white;
-            border-radius: 15px 15px 0 0;
+            border-radius: 16px 16px 0 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -142,145 +139,183 @@
         }
         
         .modal-title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 600;
             margin: 0;
             flex: 1;
-            padding-right: 20px;
+            padding-right: 25px;
+            line-height: 1.4;
         }
         
         .modal-actions {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
         
         .print-button, .close-button {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
             border: none;
             color: white;
             font-size: 1rem;
             cursor: pointer;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: background 0.3s;
+            padding: 10px 20px;
+            border-radius: 24px;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            font-weight: 500;
         }
         
         .print-button:hover, .close-button:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-2px);
         }
         
         .close-button {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             padding: 0;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            font-weight: 300;
         }
         
         .modal-body {
             flex: 1;
-            padding: 30px;
+            padding: 35px;
             overflow-y: auto;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            line-height: 1.7;
         }
         
         /* Стили для отформатированного текста */
         .modal-body h2 {
             color: #0d47a1;
-            margin: 25px 0 15px 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e3f2fd;
+            margin: 30px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #e3f2fd;
+            font-size: 1.8rem;
         }
         
         .modal-body h3 {
             color: #1e88e5;
-            margin: 20px 0 15px 0;
-            padding-left: 10px;
-            border-left: 4px solid #1e88e5;
+            margin: 25px 0 18px 0;
+            padding-left: 15px;
+            border-left: 5px solid #1e88e5;
+            font-size: 1.5rem;
         }
         
         .modal-body h4 {
             color: #1565c0;
-            margin: 18px 0 12px 0;
+            margin: 22px 0 15px 0;
+            font-size: 1.3rem;
         }
         
         .modal-body p {
-            margin: 15px 0;
-            line-height: 1.7;
-            text-align: justify;
+            margin: 18px 0;
+            line-height: 1.8;
+            text-align: left;
         }
         
         .modal-body .note {
             color: #666;
             font-style: italic;
-            padding: 10px 15px;
-            background-color: #f5f5f5;
-            border-radius: 5px;
-            margin: 15px 0;
+            padding: 18px 22px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+            font-size: 1.1rem;
         }
         
         .modal-body ul {
-            margin: 15px 0 15px 20px;
-            padding-left: 15px;
+            margin: 20px 0 20px 25px;
+            padding-left: 20px;
         }
         
         .modal-body li {
-            margin: 10px 0;
-            line-height: 1.6;
+            margin: 12px 0;
+            line-height: 1.7;
         }
         
         .modal-body ul ul {
-            margin: 8px 0 8px 25px;
+            margin: 10px 0 10px 30px;
         }
         
         .modal-body hr {
-            margin: 25px 0;
+            margin: 30px 0;
             border: none;
-            border-top: 1px solid #e0e0e0;
-            height: 1px;
+            border-top: 2px solid #eaeaea;
         }
         
         .modal-body .quote-box {
             background-color: #f8f9fa;
-            border-left: 4px solid #ff9800;
-            padding: 20px;
-            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+            padding: 25px;
+            margin: 25px 0;
             font-style: italic;
             color: #555;
+            border-radius: 0 8px 8px 0;
         }
         
         .modal-body .important-box {
             background-color: #e8f5e8;
-            border: 1px solid #4caf50;
-            border-radius: 8px;
-            padding: 25px;
-            margin: 25px 0;
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
         }
         
         .modal-body .important-box p {
-            margin: 12px 0;
+            margin: 15px 0;
         }
         
         .modal-body strong {
             color: #d32f2f;
-            font-weight: 600;
+            font-weight: 700;
         }
         
         .modal-body blockquote {
-            border-left: 4px solid #2196f3;
-            padding-left: 20px;
-            margin: 20px 0;
+            border-left: 5px solid #2196f3;
+            padding-left: 25px;
+            margin: 25px 0;
             color: #555;
             font-style: italic;
+            background: #f8fafd;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
         }
         
         .highlight {
             background-color: #fff9c4;
-            padding: 3px 6px;
-            border-radius: 4px;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .modal-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1rem;
+        }
+        
+        .modal-body th {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border: 1px solid #bbdefb;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .modal-body td {
+            padding: 14px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .modal-body tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
         
         @keyframes fadeIn {
@@ -290,21 +325,21 @@
         
         /* Стили для скроллбара */
         .modal-body::-webkit-scrollbar {
-            width: 10px;
+            width: 12px;
         }
         
         .modal-body::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 5px;
+            background: #f5f5f5;
+            border-radius: 6px;
         }
         
         .modal-body::-webkit-scrollbar-thumb {
-            background: #c1c1c1;
-            border-radius: 5px;
+            background: #b0b0b0;
+            border-radius: 6px;
         }
         
         .modal-body::-webkit-scrollbar-thumb:hover {
-            background: #a8a8a8;
+            background: #909090;
         }
 
         /* Стили для печати */
@@ -333,13 +368,20 @@
                 top: 0;
                 box-shadow: none;
                 border-radius: 0;
+                max-width: none;
+                max-height: none;
             }
             .modal-header {
                 background: #1e88e5 !important;
                 -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
             .modal-actions {
                 display: none;
+            }
+            .modal-body {
+                padding: 25px;
+                font-size: 1rem;
             }
         }
         
@@ -348,8 +390,93 @@
                 padding: 10px;
             }
             
+            .container {
+                border-radius: 10px;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.9rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+                padding: 0 10px;
+            }
+            
+            .faq-question {
+                padding: 20px;
+                font-size: 1.05rem;
+            }
+            
+            .faq-question:hover {
+                padding-left: 25px;
+            }
+            
+            .modal-content {
+                width: 98%;
+                height: 95vh;
+                max-height: none;
+                border-radius: 12px;
+            }
+            
+            .modal-header {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .modal-title {
+                font-size: 1.3rem;
+                padding-right: 0;
+                width: 100%;
+            }
+            
+            .modal-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+            
+            .modal-body {
+                padding: 20px;
+                font-size: 1.05rem;
+            }
+            
+            .print-button span {
+                display: none;
+            }
+            
+            .print-button {
+                padding: 10px 15px;
+            }
+            
+            .close-button {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .modal-body h2 {
+                font-size: 1.5rem;
+                margin: 25px 0 15px 0;
+            }
+            
+            .modal-body h3 {
+                font-size: 1.3rem;
+                margin: 20px 0 15px 0;
+            }
+            
+            .modal-body p, .modal-body li {
+                font-size: 1.05rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7rem;
             }
             
             .faq-question {
@@ -358,29 +485,30 @@
             }
             
             .modal-content {
-                width: 95%;
-                height: 95%;
+                width: 100%;
+                height: 100vh;
+                border-radius: 0;
             }
             
             .modal-header {
-                padding: 20px;
+                padding: 18px;
+                border-radius: 0;
+            }
+            
+            .modal-body {
+                padding: 18px;
             }
             
             .modal-title {
                 font-size: 1.2rem;
             }
             
-            .modal-body {
-                padding: 20px;
-                font-size: 1rem;
+            .modal-body h2 {
+                font-size: 1.4rem;
             }
             
-            .print-button span {
-                display: none;
-            }
-            
-            .print-button {
-                padding: 8px;
+            .modal-body h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -394,6 +522,10 @@
         
         <div class="faq-container" id="faqContainer">
             <!-- FAQ items will be inserted here by JavaScript -->
+        </div>
+        
+        <div class="no-results" id="noResults">
+            <p>По вашему запросу ничего не найдено. Попробуйте изменить поисковый запрос.</p>
         </div>
         
         <footer>
@@ -626,7 +758,7 @@
                         <li>Наркотические и психотропные вещества.</li>
                         <li>Табачные изделия, электронные сигaреты, вейпы (курение на территории ПТД строго запрещено).</li>
                         <li>Острые, колющие и режущие предметы (кроме одноразовых бритвенных станков).</li>
-                        <li>Дорогие ювелирные украшения, крупные суммы денеги.</li>
+                        <li>Дорогие ювелирные украшения, крупные суммы денег.</li>
                         <li>Скоропортящиеся продукты (домашние обеды, колбасы, молочка и т.д.).</li>
                     </ul>
                     
@@ -672,7 +804,7 @@
                 answer: `
                     <h2>Отказ от обследования ребёнка на туберкулёз: последствия и рекомендации</h2>
                     
-                    <p class="note">Этот текст подготовлен <strong>на основании Клинических рекомендаций «Латентная туберкулёзная инфекции у детей», Москва, 2024</strong> и объясняет родителям, что делать и какие последствия возможны, если отказаться от обследования ребёнка на туберкулёз.</p>
+                    <p class="note">Этот текст подготовлен <strong>на основании Клинических рекомендаций «Латентная туберкулёзная инфекция у детей», Москва, 2024</strong> и объясняет родителям, что делать и какие последствия возможны, если отказаться от обследования ребёнка на туберкулёз.</p>
                     
                     <hr>
                     
@@ -921,7 +1053,7 @@
                     </ol>
                     
                     <div class="important-box">
-                        <p><strong>Важно:</strong> Окончательное решение о закрытии больничного листа и возможности возвращения к работе принимает лечащий врач-фтизиатр на основе результатов контрольных обследований. Не прерывайте лечение самостоятельно, даже если почувствовали улучшение!</p>
+                        <p><strong>Важно:</strong> Окончательное решение о закрытии больничного листа и возможности возвращения к работы принимает лечащий врач-фтизиатр на основе результатов контрольных обследований. Не прерывайте лечение самостоятельно, даже если почувствовали улучшение!</p>
                     </div>
                 `
             },
@@ -948,29 +1080,29 @@
                     
                     <h3>Ориентировочные сроки госпитализации</h3>
                     
-                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <table>
                         <thead>
-                            <tr style="background-color: #e3f2fd;">
-                                <th style="padding: 12px; border: 1px solid #bbdefb; text-align: left;">Форма туберкулеза</th>
-                                <th style="padding: 12px; border: 1px solid #bbdefb; text-align: left;">Средний срок стационарного лечения</th>
+                            <tr>
+                                <th>Форма туберкулеза</th>
+                                <th>Средний срок стационарного лечения</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">Впервые выявленный, без МЛУ</td>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">2-4 месяца</td>
-                            </tr>
-                            <tr style="background-color: #f9f9f9;">
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">Туберкулез с множественной лекарственной устойчивостью (МЛУ)</td>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">6-8 месяцев и более</td>
+                                <td>Впервые выявленный, без МЛУ</td>
+                                <td>2-4 месяца</td>
                             </tr>
                             <tr>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">Обострение хронического туберкулеза</td>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">1-3 месяца</td>
+                                <td>Туберкулез с множественной лекарственной устойчивостью (МЛУ)</td>
+                                <td>6-8 месяцев и более</td>
                             </tr>
-                            <tr style="background-color: #f9f9f9;">
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">Туберкулез с осложнениями</td>
-                                <td style="padding: 10px; border: 1px solid #e0e0e0;">Индивидуально, может потребовать длительного лечения</td>
+                            <tr>
+                                <td>Обострение хронического туберкулеза</td>
+                                <td>1-3 месяца</td>
+                            </tr>
+                            <tr>
+                                <td>Туберкулез с осложнениями</td>
+                                <td>Индивидуально, может потребовать длительного лечения</td>
                             </tr>
                         </tbody>
                     </table>
@@ -990,12 +1122,229 @@
                         <p><strong>Важно:</strong> Решение о выписке принимает лечащий врач совместно с заведующим отделением на основании комплексной оценки состояния пациента. Не торопитесь с выпиской — завершение полного курса стационарного лечения значительно снижает риск рецидива заболевания.</p>
                     </div>
                 `
+            },
+            {
+                question: "Где и как я мог заразиться туберкулезом?",
+                answer: `
+                    <h2>Пути заражения туберкулезом: где и как это могло произойти</h2>
+                    
+                    <p>Туберкулез — это инфекционное заболевание, которое передается от человека к человеку воздушно-капельным путем. Вот основные ситуации, в которых могло произойти заражение:</p>
+                    
+                    <hr>
+                    
+                    <h3>Основные пути передачи</h3>
+                    
+                    <ul>
+                        <li><strong>Воздушно-капельный путь (основной)</strong> — при разговоре, кашле, чихании больного человека с активной формой туберкулеза</li>
+                        <li><strong>Бытовой контакт</strong> — использование общих предметов гигиены, посуды (менее вероятно, но возможно)</li>
+                        <li><strong>Пылевой путь</strong> — при вдыхании пыли, содержащей микобактерии туберкулеза</li>
+                    </ul>
+                    
+                    <div class="important-box">
+                        <p><strong>Важно:</strong> Туберкулез не передается через рукопожатия, объятия, поцелуи (если нет непосредственного попадания мокроты), через продукты питания или воду в современных условиях.</p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h3>Где чаще всего происходит заражение?</h3>
+                    
+                    <ul>
+                        <li><strong>Закрытые помещения</strong> — общественный транспорт, лифты, офисы, учебные классы с плохой вентиляцией</li>
+                        <li><strong>Медицинские учреждения</strong> — особенно при длительном нахождении в стационарах</li>
+                        <li><strong>Места скопления людей</strong> — торговые центры, кинотеатры, вокзалы, аэропорты</li>
+                        <li><strong>Рабочие коллективы</strong> — особенно если кто-то из коллег длительно кашляет</li>
+                        <li><strong>Домашняя обстановка</strong> — при проживании с больным туберкулезом членом семьи</li>
+                    </ul>
+                    
+                    <hr>
+                    
+                    <h3>Факторы, повышающие риск заражения</h3>
+                    
+                    <ul>
+                        <li><strong>Длительный и тесный контакт</strong> с больным активной формой туберкулеза</li>
+                        <li><strong>Ослабленный иммунитет</strong> — после перенесенных заболеваний, при хронических болезнях, стрессе</li>
+                        <li><strong>Неблагоприятные условия жизни</strong> — плохое питание, недостаток сна, вредные привычки</li>
+                        <li><strong>Профессиональные риски</strong> — работа в медицинских учреждениях, пенитенциарной системе</li>
+                    </ul>
+                    
+                    <div class="note">
+                        <p><strong>Помните:</strong> Инфицирование микобактерией туберкулеза не всегда приводит к заболеванию. У большинства людей (90-95%) иммунная система справляется с инфекцией, и она переходит в латентную (скрытую) форму. Болезнь развивается только у 5-10% инфицированных, обычно при ослаблении иммунитета.</p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h3>Что делать, если вы узнали о возможном контакте?</h3>
+                    
+                    <ol>
+                        <li><strong>Не паникуйте</strong> — контакт не означает обязательное заболевание</li>
+                        <li><strong>Обратитесь к фтизиатру</strong> — для обследования и консультации</li>
+                        <li><strong>Пройдите обследование</strong> — флюорографию/рентген, анализы мокроты, пробу Манту или Диаскинтест</li>
+                        <li><strong>Укрепляйте иммунитет</strong> — здоровое питание, полноценный сон, отказ от вредных привычек</li>
+                    </ol>
+                    
+                    <p>Если у вас обнаружен туберкулез — помните, что это заболевание сегодня успешно лечится при своевременном обращении к врачу и соблюдении всех рекомендаций.</p>
+                `
+            },
+            {
+                question: "Правда ли, что туберкулез — это болезнь только социально неблагополучных людей? Я стесняюсь говорить о своем диагнозе.",
+                answer: `
+                    <h2>Туберкулез: мифы и реальность. Это болезнь всех слоев общества</h2>
+                    
+                    <div class="important-box">
+                        <p><strong>Важное сообщение:</strong> Туберкулез — это инфекционное заболевание, которое может поразить любого человека, независимо от социального статуса, уровня дохода, образования или образа жизни. Это не "стыдная" болезнь, а медицинское состояние, требующее лечения.</p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h3>Разрушаем мифы о туберкулезе</h3>
+                    
+                    <ul>
+                        <li><strong>Миф 1:</strong> Туберкулезом болеют только бездомные, заключенные и алкоголики.</li>
+                        <li><strong>Реальность:</strong> Туберкулез регистрируется у людей всех профессий — врачей, учителей, офисных работников, студентов, спортсменов, бизнесменов.</li>
+                        
+                        <li><strong>Миф 2:</strong> Это болезнь прошлого, сегодня ей почти не болеют.</li>
+                        <li><strong>Реальность:</strong> Туберкулез остается одной из основных причин смертности от инфекционных заболеваний в мире. В России ежегодно регистрируются десятки тысяч новых случаев.</li>
+                        
+                        <li><strong>Миф 3:</strong> Если заболел туберкулезом — значит, вел асоциальный образ жизни.</li>
+                        <li><strong>Реальность:</strong> Основная причина развития заболевания — ослабление иммунитета, которое может произойти из-за стресса, переутомления, других заболеваний (диабет, ВИЧ), недосыпания, неправильного питания.</li>
+                    </ul>
+                    
+                    <hr>
+                    
+                    <h3>Почему туберкулез поражает всех?</h3>
+                    
+                    <ul>
+                        <li><strong>Микобактерия туберкулеза</strong> очень устойчива во внешней среде и широко распространена</li>
+                        <li><strong>Инфицированность населения</strong> в России составляет 70-90% — большинство взрослых являются носителями латентной инфекции</li>
+                        <li><strong>Современный ритм жизни</strong> — стрессы, недосыпание, неправильное питание ослабляют иммунитет</li>
+                        <li><strong>Высокая мобильность населения</strong> — мы постоянно контактируем с большим количеством людей в транспорте, на работе, в общественных местах</li>
+                    </ul>
+                    
+                    <hr>
+                    
+                    <h3>Известные люди, болевшие туберкулезом</h3>
+                    
+                    <div class="quote-box">
+                        <p>Исторически туберкулезом болели многие выдающиеся люди: писатели (Антон Чехов, Франц Кафка), композиторы (Фредерик Шопен), художники (Амедео Модильяни), ученые, политики. Это подтверждает, что болезнь не выбирает по социальному статусу.</p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h3>Как справиться со стыдом и страхом осуждения?</h3>
+                    
+                    <ol>
+                        <li><strong>Помните:</strong> Вы не виноваты в своей болезни. Туберкулез — это инфекция, а не результат плохого поведения.</li>
+                        <li><strong>Общайтесь выборочно:</strong> Сообщайте о диагнозе только тем, кому это необходимо знать (семья, очень близкие друзья). На работе можно предоставить справку без указания диагноза.</li>
+                        <li><strong>Получайте поддержку:</strong> Общайтесь с другими пациентами, психологом. Вы не одиноки в этой ситуации.</li>
+                        <li><strong>Фокусируйтесь на лечении:</strong> Ваша основная задача — выздороветь. Остальное — второстепенно.</li>
+                        <li><strong>Будьте информированы:</strong> Знания о болезни помогают бороться со страхами и предрассудками.</li>
+                    </ol>
+                    
+                    <div class="important-box">
+                        <p><strong>Запомните:</strong> Туберкулез — такое же заболевание, как пневмония, бронхит или грипп. Он требует медицинского лечения, а не осуждения. Сегодня туберкулез успешно лечится, и большинство пациентов полностью выздоравливают. Ваше здоровье и благополучие важнее мнения неосведомленных людей.</p>
+                    </div>
+                    
+                    <p>Если вам трудно справиться с эмоциональной нагрузкой, попросите лечащего врача направить вас к медицинскому психологу — это бесплатная услуга, входящая в программу лечения.</p>
+                `
+            },
+            {
+                question: "Может ли быть одновременное сочетание онкологии и туберкулеза?",
+                answer: `
+                    <h2>Сочетание туберкулеза и онкологических заболеваний</h2>
+                    
+                    <p>Да, одновременное сочетание туберкулеза и онкологических заболеваний возможно и встречается в медицинской практике. Это состояние требует особого внимания и комплексного подхода к лечению.</p>
+                    
+                    <hr>
+                    
+                    <h3>Статистика и вероятность сочетания</h3>
+                    
+                    <ul>
+                        <li>У пациентов с онкологическими заболеваниями риск развития туберкулеза <strong>в 2-3 раза выше</strong>, чем в общей популяции</li>
+                        <li>Наиболее часто туберкулез сочетается с <strong>раком легких</strong>, лимфомами, лейкозами</li>
+                        <li>Встречаемость такого сочетания составляет <strong>1-3%</strong> среди всех онкологических пациентов</li>
+                        <li>У пациентов с туберкулезом риск развития рака легких также повышен</li>
+                    </ul>
+                    
+                    <hr>
+                    
+                    <h3>Почему эти заболевания могут сочетаться?</h3>
+                    
+                    <ul>
+                        <li><strong>Ослабление иммунитета</strong> при онкологических заболеваниях и их лечении (химиотерапия, лучевая терапия)</li>
+                        <li><strong>Активация латентной туберкулезной инфекции</strong> на фоне иммуносупрессии</li>
+                        <li><strong>Общие факторы риска</strong> — курение, неблагоприятная экология, профессиональные вредности</li>
+                        <li><strong>Хроническое воспаление</strong> при туберкулезе может способствовать развитию рака</li>
+                    </ul>
+                    
+                    <div class="important-box">
+                        <p><strong>Важно:</strong> Наличие онкологического заболевания не является противопоказанием для лечения туберкулеза, и наоборот. Оба заболевания требуют одновременного лечения под контролем специалистов.</p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h3>Диагностические сложности</h3>
+                    
+                    <p>Дифференциальная диагностика может быть сложной, так как симптомы и рентгенологические признаки могут быть схожи:</p>
+                    
+                    <ul>
+                        <li>Кашель, одышка, кровохарканье</li>
+                        <li>Слабость, потеря веса, потливость</li>
+                        <li>Очаговые изменения на рентгене/КТ легких</li>
+                        <li>Увеличение лимфатических узлов</li>
+                    </ul>
+                    
+                    <p>Для точной диагностики необходимо:</p>
+                    
+                    <ol>
+                        <li>Компьютерная томография органов грудной клетки</li>
+                        <li>Бактериологическое исследование мокроты на микобактерии туберкулеза</li>
+                        <li>Бронхоскопия с биопсией</li>
+                        <li>Молекулярно-генетические методы диагностики</li>
+                        <li>Гистологическое исследование биоптатов</li>
+                    </ol>
+                    
+                    <hr>
+                    
+                    <h3>Особенности лечения</h3>
+                    
+                    <p>Лечение пациентов с сочетанием туберкулеза и онкологии требует:</p>
+                    
+                    <ul>
+                        <li><strong>Совместного наблюдения</strong> фтизиатра и онколога</li>
+                        <li><strong>Индивидуального подбора</strong> противотуберкулезных препаратов с учетом химиотерапии</li>
+                        <li><strong>Контроля лекарственных взаимодействий</strong> и побочных эффектов</li>
+                        <li><strong>Коррекции доз</strong> препаратов при нарушении функции печени или почек</li>
+                        <li><strong>Поддержки иммунитета</strong> и нутритивной поддержки</li>
+                    </ul>
+                    
+                    <div class="note">
+                        <p><strong>Хорошая новость:</strong> Современные противотуберкулезные препараты в большинстве случаев хорошо сочетаются с химиотерапией. При правильном подборе лечения можно успешно бороться с обоими заболеваниями одновременно.</p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h3>Рекомендации для пациентов</h3>
+                    
+                    <ol>
+                        <li><strong>Сообщите всем врачам</strong> о наличии обоих диагнозов</li>
+                        <li><strong>Строго соблюдайте</strong> назначения как фтизиатра, так и онколога</li>
+                        <li><strong>Информируйте врачей</strong> о всех побочных эффектах лечения</li>
+                        <li><strong>Проходите регулярный контроль</strong> — анализы крови, мочи, функции печени и почек</li>
+                        <li><strong>Укрепляйте организм</strong> — полноценное питание, адекватный отдых, отказ от вредных привычек</li>
+                        <li><strong>Получайте психологическую поддержку</strong> — такая двойная диагностика может быть эмоционально тяжелой</li>
+                    </ol>
+                    
+                    <div class="important-box">
+                        <p><strong>Главное:</strong> Не отчаивайтесь. Современная медицина имеет достаточно инструментов для лечения как туберкулеза, так и онкологических заболеваний. При своевременной диагностике и правильном лечении многие пациенты успешно справляются с обоими заболеваниями.</p>
+                    </div>
+                `
             }
         ];
 
         // Initialize FAQ
         document.addEventListener('DOMContentLoaded', function() {
             const faqContainer = document.getElementById('faqContainer');
+            const noResults = document.getElementById('noResults');
             const modal = document.getElementById('answerModal');
             const modalTitle = document.getElementById('modalTitle');
             const modalBody = document.getElementById('modalBody');
@@ -1005,35 +1354,25 @@
             let currentQuestion = '';
             
             // Render FAQ items
-            function renderFAQ() {
+            function renderFAQ(items) {
                 faqContainer.innerHTML = '';
                 
-                faqData.forEach((item, index) => {
+                if (items.length === 0) {
+                    noResults.style.display = 'block';
+                    return;
+                }
+                
+                noResults.style.display = 'none';
+                
+                items.forEach((item, index) => {
                     const faqItem = document.createElement('div');
                     faqItem.className = 'faq-item';
                     faqItem.innerHTML = `
                         <div class="faq-question">${item.question}</div>
-                        <div class="faq-answer">${item.answer}</div>
                     `;
                     
-                    const questionElement = faqItem.querySelector('.faq-question');
-                    const answerElement = faqItem.querySelector('.faq-answer');
-                    
-                    questionElement.addEventListener('click', function() {
-                        // Toggle active class for accordion
-                        const isActive = faqItem.classList.contains('active');
-                        
-                        // Close all other items
-                        document.querySelectorAll('.faq-item').forEach(otherItem => {
-                            if (otherItem !== faqItem) {
-                                otherItem.classList.remove('active');
-                            }
-                        });
-                        
-                        // Toggle current item
-                        faqItem.classList.toggle('active', !isActive);
-                        
-                        // Also show modal for detailed view
+                    faqItem.addEventListener('click', function() {
+                        // Показываем модальное окно с ответом
                         showModal(item.question, item.answer);
                     });
                     
@@ -1086,7 +1425,7 @@
             });
             
             // Initial render
-            renderFAQ();
+            renderFAQ(faqData);
         });
     </script>
 </body>
